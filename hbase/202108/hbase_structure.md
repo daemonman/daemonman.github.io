@@ -1,5 +1,5 @@
 # Hbase 
-## hbase特点
+## 特点
 BigTable论文中称BigTable为"sparse，distributed，persistent multidimensional sorted map"。本质上是一个map，具备稀疏、分布式、持久化、多维、有序等特点。map都是有key和value构成
 hbase中map的key是有rowkey、column famili、qualifier、type、timestamp。value即为cell的值。
 
@@ -17,7 +17,7 @@ hbase中map的key是有rowkey、column famili、qualifier、type、timestamp。v
   &emsp;行存：在一行一行检索有优势，但如果查询结果只有其中部分列，会产生大量无效的IO。通常传统的关系型数据库采取行存  
   &emsp;列存：将一列数据存储在一起，常见kudu、parquet都是列存，列存在查询某些列时十分高效。但若获取一行数据，需要多次IO，不适合整行查询。    
   &emsp;列簇存储：hbase采用这种存储方式，可以说是列和行的中间态，列簇能保证在同一列簇的多列可高效检索。但建议实际运用中，列簇不宜设置过多。  
-## hbase架构
-## hbase应用场景
+## 架构
+## 应用场景
 ## 参考文献
 
