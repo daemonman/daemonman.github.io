@@ -1,5 +1,6 @@
 # Hbase 
 ## 特点
+---
 BigTable论文中称BigTable为"sparse，distributed，persistent multidimensional sorted map"。本质上是一个map，具备稀疏、分布式、持久化、多维、有序等特点。map都是有key和value构成
 hbase中map的key是有rowkey、column family、qualifier、type、timestamp。value即为cell的值。
 
@@ -18,7 +19,7 @@ hbase中map的key是有rowkey、column family、qualifier、type、timestamp。v
   &emsp;列存：将一列数据存储在一起，常见kudu、parquet都是列存，列存在查询某些列时十分高效。但若获取一行数据，需要多次IO，不适合整行查询。    
   &emsp;列簇存储：hbase采用这种存储方式，可以说是列和行的中间态，列簇能保证在同一列簇的多列可高效检索。但建议实际运用中，列簇不宜设置过多。   
 ## 架构
-  
+---
 + 结构视图  
  &emsp; 一个完整的Hbase集群依赖关键组件：Zookeeper 、Hmaster、RegionServer、HDFS，用户通过使用Client访问Hbase。
   ![图1](./res/hbase-structure.jpg )
@@ -43,6 +44,7 @@ hbase中map的key是有rowkey、column family、qualifier、type、timestamp。v
 &emsp;分布式文件系统，作为Hbase实际持久化的存储。
 
 ## 应用场景
+---
 + 优点  
  1. 容量巨大：理论上支持千亿行、百万列存储。
  2. 良好的扩展性：扩容hdfs节点即可增大存储能力，扩容RegionServer即可增大hbase读写服务能力。
@@ -57,5 +59,6 @@ hbase中map的key是有rowkey、column family、qualifier、type、timestamp。v
  3. 不支持跨行事务。只能保障Hbase单行事务，需要用户在业务场景上多做考虑。
  
 ## 参考文献
+---
 
 参考太多，例举不完
