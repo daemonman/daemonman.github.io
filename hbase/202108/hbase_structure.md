@@ -58,5 +58,4 @@ hbase中map的key是有rowkey、column family、qualifier、type、timestamp。v
  
 ## 参考文献
 
-参考hbase大佬
-
+参考太多，例举不完
