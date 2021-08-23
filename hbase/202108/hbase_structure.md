@@ -18,6 +18,8 @@ hbase中map的key是有rowkey、column family、qualifier、type、timestamp。v
   &emsp;列存：将一列数据存储在一起，常见kudu、parquet都是列存，列存在查询某些列时十分高效。但若获取一行数据，需要多次IO，不适合整行查询。    
   &emsp;列簇存储：hbase采用这种存储方式，可以说是列和行的中间态，列簇能保证在同一列簇的多列可高效检索。但建议实际运用中，列簇不宜设置过多。  
 ## 架构
+![txt](./res/hbase-structure.jpg)
+
 ## 应用场景
 ## 参考文献
 
